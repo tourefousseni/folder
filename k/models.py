@@ -3,60 +3,76 @@ from django.db import models
 from django.utils import timezone
 
 
-
 class Person(models.Model):
-    first_name = models.CharField(max_length=30, null=True, blank=True)
-    last_name = models.CharField(max_length=30, null=True, blank=True)
-    company = models.CharField(max_length=30, null=True, blank=True)
-    genre = models.CharField(max_length=1, null=True, blank=True)
+    prenom = models.CharField(max_length=30, null=True, blank=True)
+    Nom = models.CharField(max_length=30, null=True, blank=True)
     contact = models.CharField(max_length=20, null=True, blank=True)
     domicile = models.CharField(max_length=30, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    #company = models.CharField(max_length=30, null=True, blank=True)
+    # genre = models.CharField(max_length=1, null=True, blank=True)
 
+    def __str__(self):
+        return self.prenom
 
-def __str__(self):
-    return self.first_name
+STATUS_CHOICES = (
+    ('H', 'Homme'),
+    ('F', 'Femme'),
+    ('E', 'Enfant'),
+)
 
-class Modeles(models.Model):
+class Article(models.Model):
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    nom_article = models.CharField(max_length=40, null=True, blank=True)
     type_modele = models.ForeignKey('Person',
                                     null=True,
                                     blank=True,
                                     on_delete=models.CASCADE)
     nombre = models.IntegerField(default=0)
 
+
     def __str__(self):
-        return self.type_modele
+        return self.nom_article
 
 class Payement(models.Model):
-    payement = models.ForeignKey('Modeles',
+    payement = models.ForeignKey('Article',
                                  null=True,
                                  blank=True,
-                                     on_delete=models.CASCADE)
+                                 on_delete=models.CASCADE)
 
-    prix_modele = models.CharField(max_length=25, null=True, blank=True)
+    prix_article = models.CharField(max_length=25, null=True, blank=True)
 
     def __str__(self):
         return self.payement
 
+
+
+STATUS_CHOICES = (
+        ('C', 'Client'),
+        ('O', 'Ouvrier'),
+        ('F', 'Fournisseur'),
+    )
+status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+
 class Typeperson(models.Model):
     quality_person = models.ForeignKey('Person',
-                               null=True,
-                               blank=True,
-                               on_delete=models.CASCADE)
+                                       null=True,
+                                       blank=True,
+                                       on_delete=models.CASCADE)
 
-    client = models.CharField(max_length=25, null=True, blank=True)
-    ouvrier = models.CharField(max_length=25, null=True, blank=True)
-    fournisseur = models.CharField(max_length=30, null=True, blank=True)
+    # client = models.CharField(max_length=25, null=True, blank=True)
+    # ouvrier = models.CharField(max_length=25, null=True, blank=True)
+    # fournisseur = models.CharField(max_length=30, null=True, blank=True)
 
     def __str__(self):
         return self.quality_person
 
 class Mesure(models.Model):
 
-    mesure_client = models.ForeignKey('Modeles',
-                               null=True,
-                               blank=True,
-                               on_delete=models.CASCADE)
+    mesure_client = models.ForeignKey('Article',
+                                      null=True,
+                                      blank=True,
+                                      on_delete=models.CASCADE)
 
     epaule = models.CharField(max_length=2, null=True, blank=True)
     manche = models.CharField(max_length=2, null=True, blank=True)
@@ -68,7 +84,6 @@ class Mesure(models.Model):
     cuisse = models.CharField(max_length=3, null=True, blank=True)
     tour_manche = models.CharField(max_length=2, null=True, blank=True)
     fesse = models.CharField(max_length=3, null=True, blank=True)
-
 
     def __str__(self):
         return self.mesure_client

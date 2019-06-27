@@ -1,6 +1,7 @@
 import  os
 from django.contrib import admin
-from k.models import Person, Modeles,\
+from django.utils import timezone
+from k.models import Person, Article,\
     Payement, Mesure, Typeperson
 
 
@@ -27,7 +28,16 @@ admin_site = KALALISOAdminSite(name="admin")
 #     pass
 
 admin_site.register(Person, site="admin_site")
-admin_site.register(Modeles, site="admin_site")
+class PersonAdmin(admin.ModelAdmin):
+    readonly_fields = ('release_date')
+    list_display = ('first_name',
+                    'last_name',
+                    'contact',
+                    'domicile',
+                    'release_date')
+    autocomplete_fields = ('Modeles',)
+
+admin_site.register(Article, site="admin_site")
 admin_site.register(Payement, site="admin_site")
 admin_site.register(Mesure, site="admin_site")
 admin_site.register(Typeperson, site="admin_site")
