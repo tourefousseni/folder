@@ -35,7 +35,7 @@ class PersonAdmin(admin.ModelAdmin):
                     'contact',
                     'domicile',
                     'release_date')
-    autocomplete_fields = ('Modeles',)
+    autocomplete_fields = ('Article',)
 
 admin_site.register(Article, site="admin_site")
 admin_site.register(Payement, site="admin_site")
