@@ -1,16 +1,19 @@
 from django.db import models
 from django.db import models
 from django.utils import timezone
-
+import datetime
+from django.utils.encoding import iri_to_uri
+from django.db.utils import NotSupportedError
 
 class Person(models.Model):
     prenom = models.CharField(max_length=30, null=True, blank=True)
     Nom = models.CharField(max_length=30, null=True, blank=True)
     contact = models.CharField(max_length=20, null=True, blank=True)
     domicile = models.CharField(max_length=30, null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(default=datetime.now)
     #company = models.CharField(max_length=30, null=True, blank=True)
     # genre = models.CharField(max_length=1, null=True, blank=True)
+    # RDV = models.DateTimeField(auto_now_add > 7 days for create_at)
 
     def __str__(self):
         return self.prenom
@@ -32,7 +35,7 @@ class Article(models.Model):
 
 
     def __str__(self):
-        return self.nom_article
+        return self.status
 
 class Payement(models.Model):
     payement = models.ForeignKey('Article',

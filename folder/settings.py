@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'folder.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'kala1',
         'HOST': 'localhost',
         'PORT': '5432',

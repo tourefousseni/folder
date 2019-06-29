@@ -19,9 +19,9 @@ from django.conf.urls import include, url
 from k.admin import admin_site, Person, Article
 from k import views
 
-urlpatterns = [
-      #path('admin/', admin.site.urls),
+urlpatterns = {
+    # path('admin/', admin.site.urls),
       path('admin/', admin_site.urls),
-      #path('admin/', views.Person, name='Person'),
-      #path('hello/', 'k.views.hello'),
-]
+    # path('admin/', views.Person, name='Person'),
+
+}
