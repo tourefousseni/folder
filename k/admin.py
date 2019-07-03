@@ -2,7 +2,7 @@ import  os
 from django.contrib import admin
 from django.utils import timezone
 from k.models import Person
-#Article,Payement, Mesure, Typeperson
+
 
 
 class KALALISOAdminSite(admin.AdminSite):
