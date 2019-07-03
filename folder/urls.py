@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-from k.admin import admin_site, Person, Article
-from k import views
+from k.admin import admin_site, Person
+
 
 urlpatterns = {
     # path('admin/', admin.site.urls),
       path('admin/', admin_site.urls),
-    # path('admin/', views.Person, name='Person'),
+      # path('Person/', admin_site.Person)
 
 }
