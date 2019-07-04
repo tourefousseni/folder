@@ -16,12 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include, url
-from k.admin import admin_site, Person
+from k.admin import admin, Person
 
 
-urlpatterns = {
-    # path('admin/', admin.site.urls),
-      path('admin/', admin_site.urls),
-      # path('Person/', admin_site.Person)
+urlpatterns = [
 
-}
+      url(r'^admin/', admin.site.urls),
+      #url(r'^admin/Person', include('Person.urls')),
+]
+
+     #path('admin/', admin.site.urls),
+      #path('admin/', admin.urls),
+     #path('Person/', 'views.person', name='Person'),
+
+

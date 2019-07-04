@@ -9,7 +9,7 @@ class KALALISOAdminSite(admin.AdminSite):
 
     site_header = "KALALISO"
 
-admin_site = KALALISOAdminSite(name="admin")
-admin_site.register(Person, site="admin_site")
+admin.site = KALALISOAdminSite(name="admin")
+admin.site.register(Person, site="admin.site")
 
 
