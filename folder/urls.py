@@ -26,7 +26,7 @@ urlpatterns = [
 ]
 
      #path('admin/', admin.site.urls),
-      #path('admin/', admin.urls),
-     #path('Person/', 'views.person', name='Person'),
+    #path('admin/', admin.urls),
+    #path('Person/', 'views.person', name='Person'),
 
 
