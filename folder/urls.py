@@ -25,7 +25,7 @@ urlpatterns = [
       #url(r'^admin/Person', include('Person.urls')),
 ]
 
-     #path('admin/', admin.site.urls),
+    #path('admin/', admin.site.urls),
     #path('admin/', admin.urls),
     #path('Person/', 'views.person', name='Person'),
 
