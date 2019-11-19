@@ -2,8 +2,8 @@ import  os
 from django.contrib import admin
 from django import forms
 from django.utils import timezone
-from k.models import Person, Produit, Mesure,  Payement, Command
-    # Command_Content,
+from k.models import Person,  Command
+# Command_Content, Produit, Mesure,  Payement,
 
 
 class KALALISOAdminSite(admin.AdminSite):
@@ -28,8 +28,8 @@ class PersonAdmin(admin.ModelAdmin):
 #         model = Person
 #         exclude = ['name']
 
-admin.site.register(Produit, site="admin.site")
-admin.site.register(Mesure, site="admin.site")
-admin.site.register(Payement, site="admin.site")
+# admin.site.register(Produit, site="admin.site")
+# admin.site.register(Mesure, site="admin.site")
+# admin.site.register(Payement, site="admin.site")
 admin.site.register(Command, site="admin.site")
 # admin.site.register(Command_Content, site="admin.site")
