@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="5392ef75-4e39-47d5-a9ce-4a521eafd96d" name="ubuntu" url="http://3.18.212.136">
+        <fileTransfer host="3.18.212.136" port="8000" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="8000" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
