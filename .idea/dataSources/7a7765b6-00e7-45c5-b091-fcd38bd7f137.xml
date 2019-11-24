@@ -147,8 +147,8 @@ sequence|table|46544|46546|1
       <Comment>standard public schema</Comment>
       <StateNumber>359</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-11-19.19:09:05.207</IntrospectionTimestamp>
-      <IntrospectionStateNumber>2946</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-11-22.17:19:47.750</IntrospectionTimestamp>
+      <IntrospectionStateNumber>2977</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -349,7 +349,7 @@ sequence|table|46544|46546|1
     <table id="53" parent="24" name="k_command">
       <ObjectId>46546</ObjectId>
       <Owner>fulani</Owner>
-      <StateNumber>2945</StateNumber>
+      <StateNumber>2977</StateNumber>
     </table>
     <table id="54" parent="24" name="k_person">
       <ObjectId>46538</ObjectId>
@@ -1192,11 +1192,11 @@ model</ColNames>
       <StateNumber>2945</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="175" parent="53" name="rendez_vous">
+    <column id="175" parent="53" name="date_inscription_command">
       <Position>20</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2945</StateNumber>
+      <StateNumber>2977</StateNumber>
       <TypeId>1184</TypeId>
     </column>
     <column id="176" parent="53" name="person_id">
@@ -1206,25 +1206,38 @@ model</ColNames>
       <StateNumber>2945</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <index id="177" parent="53" name="k_command_pkey">
+    <column id="177" parent="53" name="commentaire">
+      <Position>22</Position>
+      <DataType>text|0s</DataType>
+      <StateNumber>2977</StateNumber>
+      <TypeId>25</TypeId>
+    </column>
+    <column id="178" parent="53" name="rdv">
+      <Position>23</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>2977</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="179" parent="53" name="k_command_pkey">
       <ObjectId>46565</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="178" parent="53" name="k_command_person_id_6b92bb8c">
+    <index id="180" parent="53" name="k_command_person_id_6b92bb8c">
       <ObjectId>46572</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>person_id</ColNames>
     </index>
-    <key id="179" parent="53" name="k_command_pkey">
+    <key id="181" parent="53" name="k_command_pkey">
       <ObjectId>46566</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>id</ColNames>
       <UnderlyingIndexName>k_command_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="180" parent="53" name="k_command_person_id_6b92bb8c_fk_k_person_id">
+    <foreign-key id="182" parent="53" name="k_command_person_id_6b92bb8c_fk_k_person_id">
       <ObjectId>46567</ObjectId>
       <Deferrable>1</Deferrable>
       <InitiallyDeferred>1</InitiallyDeferred>
@@ -1236,97 +1249,97 @@ model</ColNames>
       <RefKeyName>k_person_pkey</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <check id="181" parent="53" name="k_command_metrage_check">
+    <check id="183" parent="53" name="k_command_metrage_check">
       <ObjectId>46550</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>metrage</ColNames>
       <Predicate>metrage &gt;= 0</Predicate>
     </check>
-    <check id="182" parent="53" name="k_command_coud_check">
+    <check id="184" parent="53" name="k_command_coud_check">
       <ObjectId>46551</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>coud</ColNames>
       <Predicate>coud &gt;= 0</Predicate>
     </check>
-    <check id="183" parent="53" name="k_command_epaule_check">
+    <check id="185" parent="53" name="k_command_epaule_check">
       <ObjectId>46552</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>epaule</ColNames>
       <Predicate>epaule &gt;= 0</Predicate>
     </check>
-    <check id="184" parent="53" name="k_command_manche_check">
+    <check id="186" parent="53" name="k_command_manche_check">
       <ObjectId>46553</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>manche</ColNames>
       <Predicate>manche &gt;= 0</Predicate>
     </check>
-    <check id="185" parent="53" name="k_command_tour_manche_check">
+    <check id="187" parent="53" name="k_command_tour_manche_check">
       <ObjectId>46554</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>tour_manche</ColNames>
       <Predicate>tour_manche &gt;= 0</Predicate>
     </check>
-    <check id="186" parent="53" name="k_command_taille_check">
+    <check id="188" parent="53" name="k_command_taille_check">
       <ObjectId>46555</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>taille</ColNames>
       <Predicate>taille &gt;= 0</Predicate>
     </check>
-    <check id="187" parent="53" name="k_command_poitrine_check">
+    <check id="189" parent="53" name="k_command_poitrine_check">
       <ObjectId>46556</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>poitrine</ColNames>
       <Predicate>poitrine &gt;= 0</Predicate>
     </check>
-    <check id="188" parent="53" name="k_command_longueur_boubou_check">
+    <check id="190" parent="53" name="k_command_longueur_boubou_check">
       <ObjectId>46557</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>longueur_boubou</ColNames>
       <Predicate>longueur_boubou &gt;= 0</Predicate>
     </check>
-    <check id="189" parent="53" name="k_command_longueur_patanlon_check">
+    <check id="191" parent="53" name="k_command_longueur_patanlon_check">
       <ObjectId>46558</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>longueur_patanlon</ColNames>
       <Predicate>longueur_patanlon &gt;= 0</Predicate>
     </check>
-    <check id="190" parent="53" name="k_command_fesse_check">
+    <check id="192" parent="53" name="k_command_fesse_check">
       <ObjectId>46559</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>fesse</ColNames>
       <Predicate>fesse &gt;= 0</Predicate>
     </check>
-    <check id="191" parent="53" name="k_command_ceinture_check">
+    <check id="193" parent="53" name="k_command_ceinture_check">
       <ObjectId>46560</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>ceinture</ColNames>
       <Predicate>ceinture &gt;= 0</Predicate>
     </check>
-    <check id="192" parent="53" name="k_command_cuisse_check">
+    <check id="194" parent="53" name="k_command_cuisse_check">
       <ObjectId>46561</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>cuisse</ColNames>
       <Predicate>cuisse &gt;= 0</Predicate>
     </check>
-    <check id="193" parent="53" name="k_command_patte_check">
+    <check id="195" parent="53" name="k_command_patte_check">
       <ObjectId>46562</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>patte</ColNames>
       <Predicate>patte &gt;= 0</Predicate>
     </check>
-    <check id="194" parent="53" name="k_command_avance_check">
+    <check id="196" parent="53" name="k_command_avance_check">
       <ObjectId>46563</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>avance</ColNames>
       <Predicate>avance &gt;= 0</Predicate>
     </check>
-    <check id="195" parent="53" name="k_command_montant_total_check">
+    <check id="197" parent="53" name="k_command_montant_total_check">
       <ObjectId>46564</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>montant_total</ColNames>
       <Predicate>montant_total &gt;= 0</Predicate>
     </check>
-    <column id="196" parent="54" name="id">
+    <column id="198" parent="54" name="id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -1334,59 +1347,59 @@ model</ColNames>
       <DefaultExpression>nextval(&apos;k_person_id_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="197" parent="54" name="categorie">
+    <column id="199" parent="54" name="categorie">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>2945</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="198" parent="54" name="prenom">
+    <column id="200" parent="54" name="prenom">
       <Position>3</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>2945</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="199" parent="54" name="nom">
+    <column id="201" parent="54" name="nom">
       <Position>4</Position>
       <DataType>varchar(30)|0s</DataType>
       <StateNumber>2945</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="200" parent="54" name="sex">
+    <column id="202" parent="54" name="type_client">
       <Position>5</Position>
       <DataType>varchar(200)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>2945</StateNumber>
+      <StateNumber>2977</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="201" parent="54" name="contact">
+    <column id="203" parent="54" name="contact">
       <Position>6</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>2945</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="202" parent="54" name="domicile">
+    <column id="204" parent="54" name="domicile">
       <Position>7</Position>
       <DataType>varchar(30)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>2945</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="203" parent="54" name="created_at">
+    <column id="205" parent="54" name="created_at">
       <Position>8</Position>
       <DataType>timestamp with time zone|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>2945</StateNumber>
       <TypeId>1184</TypeId>
     </column>
-    <index id="204" parent="54" name="k_person_pkey">
+    <index id="206" parent="54" name="k_person_pkey">
       <ObjectId>46542</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>id</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="205" parent="54" name="k_person_pkey">
+    <key id="207" parent="54" name="k_person_pkey">
       <ObjectId>46543</ObjectId>
       <StateNumber>2945</StateNumber>
       <ColNames>id</ColNames>

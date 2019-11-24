@@ -31,7 +31,7 @@ class Person(models.Model):
         ('A', 'Autres'),
     )
 
-    sex = models.CharField(max_length=200, choices=TYPE_CLIENT, default='Homme')
+    type_client = models.CharField(max_length=200, choices=TYPE_CLIENT, default='Homme')
     contact = models.CharField(max_length=20, null=True, blank=True)
     domicile = models.CharField(max_length=30, default='Lafiabougou')
     created_at = models.DateTimeField(auto_now_add=True)
@@ -157,7 +157,7 @@ class Person(models.Model):
 #     commands = models.ManyToManyField('self',  blank=True, through="Command")
 #     prix_unitaire = models.PositiveIntegerField()
 #     quantite = models.PositiveSmallIntegerField(default=1)
-#     commentaire = models.TextField(max_length=250, null=True, blank=True)
+#
 #
 #     def __str__(self):
 #         return '%s %s %s'%(self.produit_content, self.prix_unitaire, self.commentaire)
@@ -183,12 +183,16 @@ class Command(models.Model):
     ceinture = models.PositiveSmallIntegerField(null=True, blank=True)
     cuisse = models.PositiveSmallIntegerField(null=True, blank=True)
     patte = models.PositiveSmallIntegerField(null=True, blank=True)
+    commentaire = models.TextField(max_length=250, null=True, blank=True)
     avance = models.PositiveIntegerField()
     montant_total = models.PositiveIntegerField()
-    rendez_vous = models.DateTimeField(auto_now_add=True)
+    rdv = models.DateTimeField()
+    date_inscription_command = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return '%s %s %s %s'%(self.person, self.modele, self.avance, self.rendez_vous)
+        return '%s %s %s %s'%(self.person, self.modele, self.avance, self.rdv)
+
+
 
 
 #
