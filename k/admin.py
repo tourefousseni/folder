@@ -43,12 +43,12 @@ class PersonAdmin(admin.ModelAdmin):
 # admin.site.register(Payement, site="admin.site")
 admin.site.register(Command, site="admin.site")
 
-class CommandAdmin(admin.ModelAdmin):
-    models = Command
-    fields = ('modele', 'prix', 'coud', 'manche',
-              'epaule', 'longueur_patanlon', 'longueur_boubou',
-              'pointrine', 'tissu','couloir','tour_manche','cuisse', 'fesse', 'metrage', 'patte',
-              )
-    exclude = ('contact', 'avance', 'commentaire', 'rdv', 'date_inscription_command',
-                'montant_total')
+# class CommandAdmin(admin.ModelAdmin):
+#     models = Command
+#     fields = ('modele', 'prix', 'coud', 'manche',
+#               'epaule', 'longueur_patanlon', 'longueur_boubou',
+#               'pointrine', 'tissu','couloir','tour_manche','cuisse', 'fesse', 'metrage', 'patte',
+#               )
+#     exclude = ('contact', 'avance', 'commentaire', 'rdv', 'date_inscription_command',
+#                 'montant_total')
 
